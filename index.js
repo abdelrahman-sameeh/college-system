@@ -1,7 +1,7 @@
 require("dotenv").config()
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8000;
+const PORT = process.env.PORT | 8000; 
 const path = require("path");
 
 const session = require('express-session');
@@ -61,6 +61,6 @@ app.use("/", adminAbsenceRouter);
 
 
 
-app.listen(port, (err) => {
-  console.log(`server listen on port ${port} `);
+app.listen(PORT, (err) => {
+  console.log(`server listen on port ${PORT} `);
 })

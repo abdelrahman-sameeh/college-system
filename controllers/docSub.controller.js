@@ -1,6 +1,6 @@
 const { validationResult } = require("express-validator");
 const SubModel = require("../models/Sub.model");
-const { setStudentAbsence, getGradePage, getAllStudent, setGrade } = require("../models/student.model");
+const { setStudentAbsence, getAllStudent, setGrade } = require("../models/student.model");
 
 exports.getDocSubject = (req, res, next) => {
     SubModel

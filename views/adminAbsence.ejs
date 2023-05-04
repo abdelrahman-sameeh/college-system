@@ -1,0 +1,19 @@
+<%- include('parts/head')%> <%- include('parts/navbar')%>
+
+<div class="docMaterials  mb-5">
+    <div class="container">
+        <% if(subjects && subjects.length){ %>
+            <% subjects.map((sub)=>{ %>
+                    <a href="/adminAbsence/<%= sub.subName %>" class="sub mb-5">
+                        <p><%= sub.subName %></p>
+                        <p><%= sub.deptName %></p>
+                        <p><%= sub.subDoc %></p>
+                    </a>
+            <% }) %>
+        <% } %>
+    </div>
+</div>
+
+
+
+<%- include('parts/footer')%>

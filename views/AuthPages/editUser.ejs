@@ -1,0 +1,86 @@
+<%- include('../parts/head')%> 
+<%- include('../parts/navbar')%>
+
+
+
+<% 
+let deleteStatus, editStates, notValid = 'not-valid', success= 'alert-success', danger= 'alert-danger'; 
+if(deleteImageStatus){ 
+   deleteStatus = (deleteImageStatus.includes('تم')) || false 
+} 
+
+if(editUserStatus){
+   editStates = (editUserStatus.includes('تم')) || false
+} 
+%>
+
+<div class="edit-user">
+
+   <div class="container mt pt-5  mb-4">
+
+      <% if(editUserStatus){ %>
+         <div class="position-relative alert <% if(editStatus){ %> <%= success %> <% }else{ %>  <%= danger  %> <% } %> text-center fs-5 bold">
+           <%= editUserStatus %>
+           <div class="close">X</div>
+         </div>
+      <% } %> 
+      <% if(deleteImageStatus){ %>
+         <div class="position-relative alert <% if(deleteStatus){ %> <%= success %> <% }else{ %>  <%= danger  %> <% } %> text-center fs-5 bold">
+           <%= deleteImageStatus %>
+           <div class="close">X</div>
+         </div>
+      <% } %> 
+
+
+      <div class="center gap-3 flex-wrap">
+         <div class="details">
+            <div class="name text-light fs-2 bold">
+               <%= username %>
+            </div>
+   
+            <% if(userAcademic && userAcademic!='undefined'){ %>
+               <div class="academic text-light fs-2 bold">
+                  <%= userAcademic  %>
+               </div>
+            <% } %>
+         </div>
+         <div class="im center flex-column gap-2">
+            <div class="user-image bg-light" style="width: 200px; height: 200px; border-radius: 50%;">
+               <img class="w-100 h-100" style="object-fit: cover; border-radius: 50%;" src="/userImages/<%= userImage %>" alt="">
+            </div>
+            <form class="center flex-column gap-2 mt-1" action="/admin/deleteUserImage" method="post">
+               <input type="hidden" name="defaultImage" value="user-image.jpg">
+               <input type="hidden" name="userImage" value="<%= userImage %>">
+               <input type="hidden" name="username" value="<%= username %>">
+               <input type="hidden" name="_id" value="<%= _id %>">
+               <input type="hidden" name="userAcademic" value="<%= userAcademic %>">
+               <button style="width: fit-content;" class="my-btn m-0 my-btn-delete"> <i class="fa-solid fa-trash"></i> حذف الصوره  </button>
+            </form>
+         </div>
+      </div>
+   </div>
+   <div class="container center flex-wrap gap-3">
+      <form class="w-75 center flex-column gap-3" action="/users/edit/<%= _id %>" method="post">
+         <input type="hidden" name="username" value="<%= username %>">
+         <input type="hidden" name="_id" value="<%= _id %>">
+         <input type="hidden" name="userImage" value="<%= userImage %>">
+         <% if(userAcademic){ %>
+            <input type="hidden" name="userAcademic" value="<%= userAcademic %>">
+         <% } %>
+         <div class="d-flex w-100 gap-2">
+            <label class="text-light" style="width: fit-content;"  for="password" > كلمه السر الجديده </label>
+            <div class="flex1">
+               <input class="form-control flex1 <% if(validationErr){ %> <%= notValid %> <% } %> " type="password" name="password" id="password" placeholder="ادخل كلمه السر الجديده">
+               <% if(validationErr){ %>
+                  <div class="invalid-feedback d-flex">
+                     <%= validationErr.msg %>
+                  </div> 
+               <% } %>
+            </div>
+         </div>
+         <input class="my-btn-submit w-50" type="submit" value="تغير">
+      </form>
+   </div>
+</div>
+
+<%- include('../parts/footer')%>

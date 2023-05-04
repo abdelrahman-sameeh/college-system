@@ -1,0 +1,48 @@
+<%- include('../parts/head')%> <%- include('../parts/navbar')%>
+
+
+<div class="student-sub-details mt">
+   <div class="boxes container d-flex justify-content-center flex-wrap gap-3">
+
+      <div class="box grade center bg-light p-5 rounded">
+         <div class="center mb-1">
+            <div style="width: 50px;" class="image">
+               <img class="w-100" src="/images/grade.png" alt="">
+            </div>
+            <span>درجه ( <span class="bold"><%= subName %></span> )</span>
+         </div>
+
+
+
+         <% if( grade && grade.grade && grade.grade!='notAvailable' ){ %>
+            <div class="bold mt-1 text-center"> 100 / <%= grade.grade %>   </div>
+            <div class="bold mt-1 text-center"> <%= grade.status  %>   </div>
+            <div class="bold mt-1 text-center"> التقييم <%= grade.rate  %>   </div>
+         <% } %>
+         
+         <% if( grade && grade.grade=='notAvailable' ){ %>
+            <div class="alert alert-danger bold mt-1 text-center mb-0"> لم تظهر بعد </div>
+         <% } %>
+            
+
+
+         
+         
+         <form action="/studentGrade" method="post">
+            <button class="A-Btn text-light mt-1"> اظهار النتيجه </button>
+         </form>
+      </div>
+      <div class="box material center bg-light p-5 rounded">
+         <div class="center">
+            <i style="font-size: 50px;" class="fa-regular fa-file-pdf"></i>
+            <span>الملفات</span>
+         </div>
+         <form action="/studentSubMaterial" method="post">
+            <button class="A-Btn text-light mt-4"> اظهار الملفات </button>
+         </form>
+      </div>
+   </div>
+</div>
+
+
+<%- include('../parts/footer')%>

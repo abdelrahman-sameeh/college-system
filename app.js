@@ -4,11 +4,6 @@ const app = express();
 const PORT = process.env.PORT | 8000; 
 const path = require("path");
 
-app.get('/', (req, res, next) => {
-  res.json({
-    test: 'test'
-  })
-})
 
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);

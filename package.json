@@ -2,11 +2,11 @@
   "name": "progect",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "dev": "nodemon index"
   },
-  "author": "Abdelrahman sameh & ahmed salah",
+  "author": "abdelrahman sameh & ahmed salah",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",

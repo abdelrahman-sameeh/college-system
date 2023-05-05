@@ -118,8 +118,9 @@ body::-webkit-scrollbar-thumb:hover {
   transition: .5s;
 }
 .setting > .sidebar .close-sidebar{
-  background: black;
-  color: white;
+  background: #d20000;
+  color: #ebebeb;
+  font-weight: 500;
   padding: 5px 11px;
   border-radius: 50%;
   font-size: 20px;
@@ -137,7 +138,7 @@ body::-webkit-scrollbar-thumb:hover {
   background: rgb(223, 223, 223);
   color: #000000;
   padding: 4px 8px;
-  border-radius: 6px;
+  border-radius: 0 6px 6px 0;
   cursor: pointer;
 }
 

@@ -1,9 +1,8 @@
 require("dotenv").config()
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT | 8000; 
+const port = process.env.PORT;
 const path = require("path");
-
 
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
@@ -62,6 +61,6 @@ app.use("/", adminAbsenceRouter);
 
 
 
-app.listen(PORT, (err) => {
-  console.log(`server listen on port ${PORT} `);
+app.listen(port, (err) => {
+  console.log(`server listen on port ${port} `);
 })

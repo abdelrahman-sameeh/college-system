@@ -1,6 +1,6 @@
 <nav class="navbar mb-5 navbar-expand-lg navbar-dark fixed-top ">
   <div class="container">
-    <a class="navbar-brand" href="/">الصفحة الرئيسية</a>
+    <a class="navbar-brand" href="/"><i class="fa-solid fa-house"></i> الصفحة الرئيسية  </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,36 +8,36 @@
       <ul class="navbar-nav me-auto ">
         <% if (type=="admin") { %>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/departments">اضافة قسم</a>
+            <a class="nav-link active" aria-current="page" href="/departments"> <i class="fa-solid fa-plus"></i> اضافة قسم </i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/materials">اضافة مادة دراسية</a>
+            <a class="nav-link active" aria-current="page" href="/materials"> <i class="fa-solid fa-plus"></i> اضافة مادة دراسية </i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/signup">انشاء حساب</a>
+            <a class="nav-link active" aria-current="page" href="/signup"> <i class="fa-solid fa-user-pen"></i> انشاء حساب</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/users">المستخدمون</a>
+            <a class="nav-link active" aria-current="page" href="/users"> <i class="fa-solid fa-users"></i> المستخدمون</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/getDepartments">الأقسام</a>
+            <a class="nav-link active" aria-current="page" href="/getDepartments"> <i class="fa-solid fa-graduation-cap"></i> الأقسام</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/getMaterials">المواد الدراسية</a>
+            <a class="nav-link active" aria-current="page" href="/getMaterials"> <i class="fa-solid fa-book"></i> المواد الدراسية</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/adminAbsence">كشوفات الغياب</a>
+            <a class="nav-link active" aria-current="page" href="/adminAbsence"> <i class="fa-solid fa-sheet-plastic"></i> كشوفات الغياب</a>
           </li>
         <% }else if(type=="doctor"){ %>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/docMaterials">المواد الدراسية</a>
+            <a class="nav-link active" aria-current="page" href="/docMaterials"> <i class="fa-solid fa-chalkboard-user"></i> المواد الدراسية</a>
           </li>
           <% }else if(type=="student"){ %>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/studentMaterials">المواد الدراسية</a>
+              <a class="nav-link active" aria-current="page" href="/studentMaterials"> <i class="fa-solid fa-chalkboard-user"></i> المواد الدراسية</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/regMaterials"> تسجيل المواد الدراسية </a>
+              <a class="nav-link active" aria-current="page" href="/regMaterials"> <i class="fa-solid fa-file-pen"></i> تسجيل المواد الدراسية </a>
             </li>
             <% } %>
         <li class="nav-item">
@@ -77,7 +77,7 @@
           <form class="center flex-column gap-2 mt-1 w-100" action="/user/changeImage" method="post" enctype="multipart/form-data">
             <label  style="text-decoration: underline; cursor: pointer;" for="image" > <i class="fa-solid fa-upload"></i> اضغط لاختيار صوره </label>
             <input class="d-none" type="file" name="image" id="image" />
-            <button class="my-btn m-0 my-btn-submit"> تغير </button>
+            <button class="my-btn m-0 my-btn-submit"><i class="fa-solid fa-rotate"></i> تغيير </button>
           </form>
           <form class="center flex-column gap-2 mt-1 w-100" action="/user/deleteImage" method="post">
             <input type="hidden" name="defaultImage" value="user-image.jpg">

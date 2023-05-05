@@ -70,7 +70,7 @@
     <% } %>
 
     <label class="login__label" for="subPrev" >المتطلب السابق :</label>
-    <input class="login__input <% if(subPrev){ %> <%= notValid %> <% } %>" type="text" id="subPrev" name="subPrev" placeholder="المتطلب السابق"  />
+    <input value="لايوجد" class="login__input <% if(subPrev){ %> <%= notValid %> <% } %>" type="text" id="subPrev" name="subPrev" placeholder="المتطلب السابق"  />
     <small  style="color: white;"> افصل بين المواد بتلك العلامة ","</small>
     <% if(subPrev){ %>
       <div class="invalid-feedback d-flex">
